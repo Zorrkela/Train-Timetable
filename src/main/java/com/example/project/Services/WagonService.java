@@ -1,7 +1,7 @@
-package com.example.Project.Services;
+package com.example.project.Services;
 
-import com.example.Project.Models.WagonModel;
-import com.example.Project.Repositories.WagonRepository;
+import com.example.project.Models.WagonModel;
+import com.example.project.Repositories.WagonRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

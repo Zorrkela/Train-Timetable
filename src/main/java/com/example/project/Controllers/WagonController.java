@@ -1,7 +1,7 @@
-package com.example.Project.Controllers;
+package com.example.project.Controllers;
 
-import com.example.Project.Models.WagonModel;
-import com.example.Project.Services.WagonService;
+import com.example.project.Models.WagonModel;
+import com.example.project.Services.WagonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
