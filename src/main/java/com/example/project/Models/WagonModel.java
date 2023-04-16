@@ -25,9 +25,10 @@ public class WagonModel {
         this.weight = weight;
     }
 
-    public WagonModel(){//CHECK
+    public WagonModel() {
 
     }
+
 
     public int getId(){
         return id;
