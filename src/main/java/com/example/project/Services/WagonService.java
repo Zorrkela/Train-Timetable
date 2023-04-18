@@ -23,8 +23,8 @@ public class WagonService {
     public Optional<WagonModel> getWagonById(int id){
         return this.wagonRepository.findById(id);
     }
-    public Optional<WagonModel> getWagonByStatus(String status){
-        return this.wagonRepository.findByWagonStatus(status);
+    public Optional<WagonModel> getWagonByStatus(String status){//-----------------------------------------
+        return this.wagonRepository.findByWagonStatus(status);//-------------------------------------------
     }
     public WagonModel addWagon(WagonModel wagon){
         return this.wagonRepository.save(wagon);
@@ -46,21 +46,23 @@ public class WagonService {
             finalWagon.setTypeOfWagon(updatedWagon.getTypeOfWagon());
         }
 
-        if (updatedWagon.getStatusOfWagon() == null){
-            finalWagon.setStatusOfWagon(currentWagons.get().getStatusOfWagon());
+        if (updatedWagon.getStatus() == null){
+            finalWagon.setStatus(currentWagons.get().getStatus());
         }
 
         else{
-            finalWagon.setStatusOfWagon(currentWagons.get().getStatusOfWagon());
+            finalWagon.setStatus(currentWagons.get().getStatus());
         }
 
-        if(updatedWagon.getWeightOfWagon() == null){
-            finalWagon.setWeightOfWagon(currentWagons.get().getWeightOfWagon());
+        if(updatedWagon.getWeight() == null){
+            finalWagon.setWeight(currentWagons.get().getWeight());
         }
 
         else{
-            finalWagon.setWeightOfWagon(updatedWagon.getWeightOfWagon());
+            finalWagon.setWeight(updatedWagon.getWeight());
         }
-        this.wagonRepository.updateWagon(finalWagon.getId(), finalWagon.getTypeOfWagon(), finalWagon.getStatusOfWagon(), finalWagon.getWeightOfWagon());
+        this.wagonRepository.updateWagon(finalWagon.getId(), finalWagon.getTypeOfWagon(), finalWagon.getStatus(), finalWagon.getWeight());
     }
 }
+
+
