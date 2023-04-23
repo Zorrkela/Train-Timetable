@@ -1,0 +1,1188 @@
+{
+	"info": {
+		"_postman_id": "d88ef1f8-cc1d-460b-a03d-4a731441b2d2",
+		"name": "train-timetable",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13848481"
+	},
+	"item": [
+		{
+			"name": "wagon",
+			"item": [
+				{
+					"name": "get all wagons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/wagon",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wagon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get wagon by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/wagon/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wagon",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by wagon type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/wagon/searchByType/Eanoss",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wagon",
+								"searchByType",
+								"Eanoss"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get wagon by status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/wagon/searchByStatus/OUT",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wagon",
+								"searchByStatus",
+								"OUT"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by wagon weight",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/wagon/searchByWeight/25",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wagon",
+								"searchByWeight",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a wagon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"typeOfWagon\": \"Eanoss\",\r\n        \"status\": \"OUT\",\r\n        \"weight\": \"29\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/wagon",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wagon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete wagon by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/wagon/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wagon",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit a wagon by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"typeOfWagon\": \"Eanoss\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/wagon/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wagon",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "locomotive",
+			"item": [
+				{
+					"name": "get all locomotives",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/locomotive",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locomotive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get locomotive by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/locomotive/searchById/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locomotive",
+								"searchById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get locomotive by series",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/locomotive/searchBySeries/193",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locomotive",
+								"searchBySeries",
+								"193"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get locomotive by number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/locomotive/searchByNumber/913",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locomotive",
+								"searchByNumber",
+								"913"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get locomotive by power",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/locomotive/searchByPower/5200",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locomotive",
+								"searchByPower",
+								"5200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get locomotive by status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/locomotive/searchByStatus/rev",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locomotive",
+								"searchByStatus",
+								"rev"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a locomotive",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"series\": \"198\",\r\n        \"number\": \"918\",\r\n        \"power\": \"5200\",\r\n        \"status\": \"RTG\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/locomotive",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locomotive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete locomotive by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/locomotive/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locomotive",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit a locomotive by id ( not working )",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"power\": 52000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/locomotive/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locomotive",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "stations",
+			"item": [
+				{
+					"name": "get all stations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stations",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get station by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stations/searchById/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stations",
+								"searchById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get station by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stations/searchByName/Novi Sad",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stations",
+								"searchByName",
+								"Novi Sad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get station by location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stations/searchByLocation/Belgrade",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stations",
+								"searchByLocation",
+								"Belgrade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add station",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Belgrade Center 2\",\r\n    \"location\": \"Belgrade 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/stations",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete station by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stations/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stations",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit station by id (not working)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\": \"Belgrade9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/stations/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "composition",
+			"item": [
+				{
+					"name": "get all compositions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/composition",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"composition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get composition by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/composition/searchById/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"composition",
+								"searchById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get composition by locomotive id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/composition/searchByLocomotiveId/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"composition",
+								"searchByLocomotiveId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get composition by wagon id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/composition/searchByWagonId/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"composition",
+								"searchByWagonId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add composition",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"locomotiveId\": 2,\r\n        \"wagonId\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/composition",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"composition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete composition by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/composition/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"composition",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit compostion by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"locomotiveId\": 3,\r\n    \"wagonId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/composition/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"composition",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "start station",
+			"item": [
+				{
+					"name": "get all start stations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/startStation",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"startStation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get start station by start station id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/startStation/searchByStartStationId/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"startStation",
+								"searchByStartStationId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get start station by station id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/startStation/searchByStationId/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"startStation",
+								"searchByStationId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add start station",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stationId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/startStation",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"startStation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete start station by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/startStation/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"startStation",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit start station by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stationId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/startStation/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"startStation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "last station",
+			"item": [
+				{
+					"name": "get all last stations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/lastStation",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lastStation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get last station by last station id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/lastStation/searchByLastStationId/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lastStation",
+								"searchByLastStationId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get last station by station id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/lastStation/searchByStationId/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lastStation",
+								"searchByStationId",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add last station",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stationId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/lastStation",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lastStation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete last station by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/lastStation/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lastStation",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit start station by id Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stationId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/lastStation/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lastStation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "train",
+			"item": [
+				{
+					"name": "get all trains",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get train by train number (id)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train/searchByTrainNumber/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train",
+								"searchByTrainNumber",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get train by departure time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train/searchByTimeOfDeparture/20:50:00",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train",
+								"searchByTimeOfDeparture",
+								"20:50:00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get train by weight",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train/searchByWeight/2000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train",
+								"searchByWeight",
+								"2000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get train by composition id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train/searchByCompositionId/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train",
+								"searchByCompositionId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get train by start station id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train/searchByStartStationId/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train",
+								"searchByStartStationId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get train by last station id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train/searchByLastStationId/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train",
+								"searchByLastStationId",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add train",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"time\": \"20:50:55\",\r\n        \"weight\": 2050,\r\n        \"compositionId\": 1,\r\n        \"startStationId\": 3,\r\n        \"lastStationId\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/train",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete train by train number (id)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"time\": \"20:50:44\",\r\n    \"weight\": 2055,\r\n    \"compositionId\": 1,\r\n    \"startStationId\": 2,\r\n    \"lastStationId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/train/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
