@@ -17,33 +17,49 @@ public class WagonService {
     public WagonService(WagonRepository wagonRepository){
         this.wagonRepository = wagonRepository;
     }
+    //GET------>
     public List<WagonModel> getAllWagons(){
         return this.wagonRepository.findAll();
     }
     public Optional<WagonModel> getWagonById(int id){
         return this.wagonRepository.findById(id);
     }
-    public Optional<WagonModel> getWagonByStatus(String status){//-----------------------------------------
-        return this.wagonRepository.findByWagonStatus(status);//-------------------------------------------
+    public List<WagonModel> getWagonByType(String type){
+        return this.wagonRepository.findByType(type);
     }
+    public List<WagonModel> getWagonByStatus(String status){
+        return this.wagonRepository.findByStatus(status);
+    }
+    public List<WagonModel> getWagonByWeight(String weight){
+        return this.wagonRepository.findByWeight(weight);
+    }
+    //<------GET
+
+    //POST------>
     public WagonModel addWagon(WagonModel wagon){
         return this.wagonRepository.save(wagon);
     }
+    //<------POST
+
+    //DELETE------>
     public void deleteWagonById(int id){
         this.wagonRepository.deleteById(id);
     }
+    //<------DELETE
+
+    //PUT------>
     @Transactional
     public void editWagon(int id, WagonModel updatedWagon){
         Optional<WagonModel> currentWagons = this.wagonRepository.findById(id);
         WagonModel finalWagon = new WagonModel();
         finalWagon.setId(id);
 
-        if(updatedWagon.getTypeOfWagon() == null){
-            finalWagon.setTypeOfWagon(currentWagons.get().getTypeOfWagon());
+        if(updatedWagon.getType() == null){
+            finalWagon.setType(currentWagons.get().getType());
         }
 
         else{
-            finalWagon.setTypeOfWagon(updatedWagon.getTypeOfWagon());
+            finalWagon.setType(updatedWagon.getType());
         }
 
         if (updatedWagon.getStatus() == null){
@@ -61,8 +77,9 @@ public class WagonService {
         else{
             finalWagon.setWeight(updatedWagon.getWeight());
         }
-        this.wagonRepository.updateWagon(finalWagon.getId(), finalWagon.getTypeOfWagon(), finalWagon.getStatus(), finalWagon.getWeight());
+        this.wagonRepository.updateWagon(finalWagon.getId(), finalWagon.getType(), finalWagon.getStatus(), finalWagon.getWeight());
     }
+    //<------PUT
 }
 
 

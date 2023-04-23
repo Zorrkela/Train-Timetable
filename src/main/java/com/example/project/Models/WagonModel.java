@@ -12,12 +12,12 @@ public class WagonModel {
     private int id;
 
     @Column(name = "type_of_wagon")
-    private String typeOfWagon;
+    private String type;
 
     @Column(name = "status")
     private String status;
 
-    @Column(name = "weight(t)")
+    @Column(name = "weight")
     private String weight;
 
 }
