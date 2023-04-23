@@ -29,9 +29,9 @@ CREATE TABLE IF NOT EXISTS `composition` (
   KEY `FK__wagon` (`wagon_id`),
   CONSTRAINT `FK__locomotive` FOREIGN KEY (`locomotive_id`) REFERENCES `locomotive` (`locomotive_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK__wagon` FOREIGN KEY (`wagon_id`) REFERENCES `wagon` (`wagon_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table train_timetable_app.composition: ~1 rows (approximately)
+-- Dumping data for table train_timetable_app.composition: ~2 rows (approximately)
 INSERT INTO `composition` (`composition_id`, `locomotive_id`, `wagon_id`) VALUES
 	(1, 1, 1),
 	(2, 3, 2);
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `last_station` (
   PRIMARY KEY (`last_station_id`),
   KEY `FK__stations_ls` (`station_id`),
   CONSTRAINT `FK__stations_ls` FOREIGN KEY (`station_id`) REFERENCES `stations` (`station_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table train_timetable_app.last_station: ~4 rows (approximately)
 INSERT INTO `last_station` (`last_station_id`, `station_id`) VALUES
@@ -57,13 +57,13 @@ CREATE TABLE IF NOT EXISTS `locomotive` (
   `locomotive_id` int(11) NOT NULL AUTO_INCREMENT,
   `series` int(11) NOT NULL DEFAULT 0,
   `number` int(11) NOT NULL DEFAULT 0,
-  `power(kw)` int(11) NOT NULL DEFAULT 0,
+  `power` int(11) NOT NULL DEFAULT 0,
   `status` varchar(50) NOT NULL,
   PRIMARY KEY (`locomotive_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table train_timetable_app.locomotive: ~5 rows (approximately)
-INSERT INTO `locomotive` (`locomotive_id`, `series`, `number`, `power(kw)`, `status`) VALUES
+INSERT INTO `locomotive` (`locomotive_id`, `series`, `number`, `power`, `status`) VALUES
 	(1, 193, 913, 5200, 'RTG'),
 	(2, 193, 907, 5200, 'REV'),
 	(3, 193, 903, 5200, 'RTG'),
@@ -77,12 +77,12 @@ CREATE TABLE IF NOT EXISTS `start_station` (
   PRIMARY KEY (`start_station_id`),
   KEY `FK__stations_ss` (`station_id`),
   CONSTRAINT `FK__stations_ss` FOREIGN KEY (`station_id`) REFERENCES `stations` (`station_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table train_timetable_app.start_station: ~4 rows (approximately)
 INSERT INTO `start_station` (`start_station_id`, `station_id`) VALUES
-	(1, 1),
 	(2, 2),
+	(1, 3),
 	(3, 3),
 	(4, 4);
 
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `stations` (
   `name` varchar(50) NOT NULL DEFAULT '0',
   `location` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`station_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table train_timetable_app.stations: ~4 rows (approximately)
 INSERT INTO `stations` (`station_id`, `name`, `location`) VALUES
@@ -105,7 +105,7 @@ INSERT INTO `stations` (`station_id`, `name`, `location`) VALUES
 CREATE TABLE IF NOT EXISTS `train` (
   `train_number` int(11) NOT NULL AUTO_INCREMENT,
   `time_of_departure` time NOT NULL DEFAULT '00:00:00',
-  `weight(t)` int(11) NOT NULL DEFAULT 0,
+  `weight` int(11) NOT NULL DEFAULT 0,
   `composition_id` int(11) NOT NULL DEFAULT 0,
   `start_station_id` int(11) NOT NULL DEFAULT 0,
   `last_station_id` int(11) NOT NULL DEFAULT 0,
@@ -116,10 +116,10 @@ CREATE TABLE IF NOT EXISTS `train` (
   CONSTRAINT `FK__last_station` FOREIGN KEY (`last_station_id`) REFERENCES `last_station` (`last_station_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK__start_station` FOREIGN KEY (`start_station_id`) REFERENCES `start_station` (`start_station_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_train_composition` FOREIGN KEY (`composition_id`) REFERENCES `composition` (`composition_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table train_timetable_app.train: ~1 rows (approximately)
-INSERT INTO `train` (`train_number`, `time_of_departure`, `weight(t)`, `composition_id`, `start_station_id`, `last_station_id`) VALUES
+INSERT INTO `train` (`train_number`, `time_of_departure`, `weight`, `composition_id`, `start_station_id`, `last_station_id`) VALUES
 	(4, '20:50:00', 2000, 1, 1, 3);
 
 -- Dumping structure for table train_timetable_app.train_driver
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `train_driver` (
   CONSTRAINT `FK__stations` FOREIGN KEY (`origin_station_id`) REFERENCES `stations` (`station_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table train_timetable_app.train_driver: ~2 rows (approximately)
+-- Dumping data for table train_timetable_app.train_driver: ~1 rows (approximately)
 INSERT INTO `train_driver` (`train_driver_id`, `name`, `surname`, `personal_number`, `origin_station_id`) VALUES
 	(2, 'Petar', 'Pertrovic', '0001', 1),
 	(3, 'Nebojsa', 'Jovic', '0002', 1);
@@ -144,12 +144,12 @@ CREATE TABLE IF NOT EXISTS `wagon` (
   `wagon_id` int(11) NOT NULL AUTO_INCREMENT,
   `type_of_wagon` varchar(50) NOT NULL DEFAULT '0',
   `status` varchar(50) NOT NULL DEFAULT '0',
-  `weight(t)` varchar(50) NOT NULL DEFAULT '0',
+  `weight` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`wagon_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table train_timetable_app.wagon: ~3 rows (approximately)
-INSERT INTO `wagon` (`wagon_id`, `type_of_wagon`, `status`, `weight(t)`) VALUES
+INSERT INTO `wagon` (`wagon_id`, `type_of_wagon`, `status`, `weight`) VALUES
 	(1, 'Eanoss', 'RTG', '25'),
 	(2, 'Eanoss', 'RTG', '25'),
 	(3, 'Eanoss', 'OUT', '25');
