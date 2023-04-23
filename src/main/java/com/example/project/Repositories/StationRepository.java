@@ -1,7 +1,6 @@
 package com.example.project.Repositories;
 
 import com.example.project.Models.StationModel;
-import com.example.project.Models.WagonModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
