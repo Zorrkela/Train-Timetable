@@ -1183,6 +1183,183 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "train driver",
+			"item": [
+				{
+					"name": "get all train drivers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train-driver",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train-driver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get train driver by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train-driver/searchByDriverId/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train-driver",
+								"searchByDriverId",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train-driver/searchByName/nebojsa",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train-driver",
+								"searchByName",
+								"nebojsa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by surname",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train-driver/searchBySurname/jovic",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train-driver",
+								"searchBySurname",
+								"jovic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by origin station id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train-driver/searchByOriginStationId/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train-driver",
+								"searchByOriginStationId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add train driver",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Petar\",\r\n    \"surname\": \"Pertrovic\",\r\n    \"personalNumber\": \"0004\",\r\n    \"originStationId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/train-driver",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train-driver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete driver by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/train-driver/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train-driver",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Petar\",\r\n    \"surname\": \"Petrovic\",\r\n    \"personalNumber\": \"0004\",\r\n    \"originStationId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/train-driver/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"train-driver",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
